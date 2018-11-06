@@ -1,0 +1,29 @@
+[user]
+	email = poniraq@gmail.com
+	name = poniraq
+[http]
+[color]
+  ui = true
+[core]
+	autocrlf = input
+#	whitespace = cr-at-eol
+	editor = nvim
+  pager = less
+[merge]
+	tool = vimdiff
+[diff]
+	tool = vimdiff
+	renamelimit = 200000
+[alias]
+	st = status
+	co = checkout
+	ci = commit -v
+	b = branch
+	cs = diff  --ignore-all-space --color-words --diff-filter=ACMRTUXB -M80% --find-copies-harder
+	p = log -p --ignore-all-space --color-words --diff-filter=ACMRTUXB -M80% --find-copies-harder
+	purge = checkout --
+	unstage = reset HEAD --
+[push]
+	default = upstream
+[spe]
+	release = 7

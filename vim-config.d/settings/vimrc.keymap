@@ -1,0 +1,88 @@
+" Map leader
+let mapleader = ";"
+
+" Tabs
+map <leader>tt :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tw :tabclose<cr>
+map <leader>tm :tabmove 
+map <leader>t<leader> :tabnext<cr>
+
+
+" :tabedit in current directory
+map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+
+
+map <M-t> :tabnew<cr>
+map <M-e> :tabedit <c-r>=expand("%:p:h")<cr>/
+map <M-w> :tabclose<cr>
+map <M-m> :tabmove
+map <M-o> :tabclose<cr>
+
+map <M-1> :tabn 1<cr>
+map <M-2> :tabn 2<cr>
+map <M-3> :tabn 3<cr>
+map <M-4> :tabn 4<cr>
+map <M-5> :tabn 5<cr>
+map <M-6> :tabn 6<cr>
+map <M-7> :tabn 7<cr>
+map <M-8> :tabn 8<cr>
+map <M-9> :tabn 9<cr>
+
+
+" Windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" The Silver Searcher
+" bind K to search the word under the cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
+
+" Workspace
+nnoremap <leader>ws :ToggleWorkspace<cr>
+
+
+" Indent Guides
+map <leader>ig :IndentGuidesToggle<cr>
+
+
+" Remap VIM 0 to first non-blank character
+map 0 ^
+
+
+" Search in current line
+map <leader>s V/\%V
+
+" Move a line of text using ALT+[jk] or Command+[jk] on mac
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+" Smooth scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 20, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 20, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 20, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 20, 4)<CR>
+
+
+" NERD Tree
+map <leader><leader> :NERDTreeFocusToggle<cr>
+map <leader>n :NERDTreeTabsToggle<cr>
+map <leader>f :NERDTreeTabsFind<cr>
+
+
+" ALE
+map <leader>af :ALEFix<cr>
+map <leader>aa :ALEDetail<cr>
+map <leader>an :ALENextWrap<cr>
+map <leader>ap :ALEPreviousWrap<cr>
+
+
+" nvim-typescript
+map <leader>i :TSGetCodeFix<cr>

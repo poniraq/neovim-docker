@@ -1,0 +1,7 @@
+runtime settings/vimrc.plugins
+runtime settings/vimrc.keymap
+runtime settings/vimrc.colors
+
+runtime settings/vimrc.basic
+runtime settings/vimrc.advanced
+runtime settings/vimrc.filetypes

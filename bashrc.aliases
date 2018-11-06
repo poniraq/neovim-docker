@@ -1,0 +1,6 @@
+alias mkdir="mkdir -pv"
+alias myip="curl http://ipecho.net/plain; echo"
+
+alias journalctl='sudo journalctl'
+alias systemctl='sudo systemctl'
+alias se='ls /usr/bin | grep'
