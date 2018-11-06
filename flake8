@@ -4,3 +4,4 @@ exclude =
   __init__.py,
   settings,
 max-line-length = 99
+ignore = D102, D400, D101, D100

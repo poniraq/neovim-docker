@@ -4,6 +4,7 @@ FROM ubuntu:18.04
 ENV TERM screen-256color
 ENV DEBIAN_FRONTEND noninteractive
 
+
 # Update and install
 RUN apt-get update && apt-get install -y \
       htop \
@@ -27,9 +28,14 @@ RUN apt-get update && apt-get install -y \
       libssl-dev \
       libffi-dev \
       locales \
-			node \
-      # For Youcompleteme
-      cmake
+      cmake \
+      gcc \
+      sudo \
+      g++
+
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt-get install -y nodejs
+RUN npm install -g eslint neovim
 
 # Generally a good idea to have these, extensions sometimes need them
 # RUN locale-gen en_US.UTF-8
@@ -56,6 +62,7 @@ RUN wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_
 RUN pip3 install neovim jedi flake8 flake8-docstrings flake8-isort flake8-quotes
 RUN pip3 install pep8-naming pep257 isort mypy ansible-lint flake8-bugbear
 RUN pip3 install flake8-commas flake8-comprehensions
+RUN pip3 install --upgrade neovim
 
 ADD gitconfig /etc/gitconfig
 ADD bashrc /root/.bashrc
@@ -78,3 +85,5 @@ RUN nvim -i NONE -c PlugInstall -c quitall > /dev/null 2>&1
 
 # Add flake8 config, don't trigger a long build process
 ADD flake8 /root/.flake8
+ADD isort.cfg /root/.isort.cfg
+ADD rc.conf /root/.config/ranger/rc.conf

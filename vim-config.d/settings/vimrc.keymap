@@ -75,6 +75,7 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 20, 4)<CR>
 map <leader><leader> :NERDTreeFocusToggle<cr>
 map <leader>n :NERDTreeTabsToggle<cr>
 map <leader>f :NERDTreeTabsFind<cr>
+map <F5> :NERDTreeTabsToggle<cr>
 
 
 " ALE
@@ -82,7 +83,6 @@ map <leader>af :ALEFix<cr>
 map <leader>aa :ALEDetail<cr>
 map <leader>an :ALENextWrap<cr>
 map <leader>ap :ALEPreviousWrap<cr>
-
 
 " nvim-typescript
 map <leader>i :TSGetCodeFix<cr>

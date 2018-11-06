@@ -3,7 +3,7 @@ set clipboard+=unnamedplus
 
 " Provider settings
 let g:loaded_python_provider = 1
-let g:node_host_prog = '/home/poniraq/.npm-packages/bin/neovim-node-host'
+let g:node_host_prog = '/usr/bin/neovim-node-host'
 
 
 " Deoplete settings
